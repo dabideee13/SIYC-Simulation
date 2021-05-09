@@ -14,6 +14,7 @@ import dash
 import dash_core_components as dcc 
 import dash_html_components as html 
 import plotly.graph_objs as go
+import dash_table
 
 def ode_model(z: list, t, m, b1, b2, b3, a, a2, K, c, c1, c2, k1,
           k2, k3, r, beta):
@@ -80,43 +81,49 @@ else:
 simData = {'S': S, 'I': I, 'Y': Y, 'C': C}
 df = pd.DataFrame(simData)
 
-print(df)
 
 app = dash.Dash()
 server = app.server
-app.layout = html.Div(children=[
-    html.H1(children='SIYC Model Simulation'),
-    html.Div(children='''Simulation'''),
-    dcc.Graph(
-        id='example-graph',
-        figure={
-            'data': 
-                [go.Scatter(x=tspan, 
-                            y=S, 
-                            mode='lines',
-                            name='S'),
-                    go.Scatter(x=tspan,
-                            y=I,
-                            mode='lines',
-                            name='I'),
-                    go.Scatter(x=tspan,
-                            y=Y, 
-                            mode='lines',
-                            name='Y'),
-                    go.Scatter(x=tspan, 
-                            y=C,
-                            mode='lines',
-                            name='C')],
-            'layout':
-                go.Layout(title='Simulation of SIYC Model',
-                            xaxis_title='Day',
-                            yaxis_title='Counts',
-                            title_x=0.5, 
-                            width=800,
-                            height=700)
-        },
-        responsive=True)
-])
+app.layout = html.Div(
+    children=[
+        html.H1(children='SIYC Model Simulation'),
+        html.Div(children='''Simulation'''),
+        dcc.Graph(
+            id='example-graph',
+            figure={
+                'data': 
+                    [go.Scatter(x=tspan, 
+                                y=S, 
+                                mode='lines',
+                                name='S'),
+                        go.Scatter(x=tspan,
+                                y=I,
+                                mode='lines',
+                                name='I'),
+                        go.Scatter(x=tspan,
+                                y=Y, 
+                                mode='lines',
+                                name='Y'),
+                        go.Scatter(x=tspan, 
+                                y=C,
+                                mode='lines',
+                                name='C')],
+                'layout':
+                    go.Layout(title='Simulation of SIYC Model',
+                                xaxis_title='Day',
+                                yaxis_title='Counts',
+                                title_x=0.5, 
+                                width=800,
+                                height=700)
+            },
+            responsive=True),
+        dash_table.DataTable(
+            id='table',
+            #columns=[{"name": i, "id": i} for i in df.columns],
+            data=df.to_dict('records')
+        )
+    ]
+)
 
 
 if __name__ == '__main__':
