@@ -1,10 +1,11 @@
-#!/opt/anaconda3/envs/siyc/bin/python
+#!/Users/d.e.magno/Projects/mini/Ruth Serquina/dash_app/venv/bin/python
 # -*- coding: utf-8 -*-
 """Ruth Simulation"""
 
 import os
 from collections import namedtuple
 import numpy as np
+import pandas as pd
 from scipy.integrate import odeint
 
 import plotly
@@ -69,13 +70,17 @@ tspan = np.arange(0, days, 1)
 sol = ode_solver(tspan, initial_conditions, params)
 S, I, Y, C = sol[:, 0], sol[:, 1], sol[:, 2], sol[:, 3]
 
-
 if days <= 30:
     step = 1
 elif days <= 90:
     step = 7
 else:
     step = 30
+
+simData = {'S': S, 'I': I, 'Y': Y, 'C': C}
+df = pd.DataFrame(simData)
+
+print(df)
 
 app = dash.Dash()
 server = app.server
