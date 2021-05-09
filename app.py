@@ -56,10 +56,8 @@ def main(initS, initI, initY, initC, m, b1, b2, b3, a, a2, K, c,
         else:
             step = 30
 
-
-        #external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
-
-        app = dash.Dash()
+        external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
+        app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
         server = app.server
         app.layout = html.Div(children=[
             html.H1(children='SIYC Model Simulation'),
