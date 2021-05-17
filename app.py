@@ -1,23 +1,26 @@
 #!/Users/d.e.magno/Projects/mini/Ruth Serquina/dash_app/venv/bin/python
 # -*- coding: utf-8 -*-
-"""Ruth Simulation"""
+"""
+SIYC Simulation
+"""
 
 import os
 from collections import namedtuple
+
 import numpy as np
 import pandas as pd
 from scipy.integrate import odeint
-
 import plotly
-
 import dash
 import dash_core_components as dcc 
 import dash_html_components as html 
 import plotly.graph_objs as go
 import dash_table
 
+
 def ode_model(z: list, t, m, b1, b2, b3, a, a2, K, c, c1, c2, k1,
-          k2, k3, r, beta):
+              k2, k3, r, beta):
+    
     S, I, Y, C = z
     N = S + I + Y + C
 
@@ -33,6 +36,7 @@ def ode_model(z: list, t, m, b1, b2, b3, a, a2, K, c, c1, c2, k1,
     dCdt = (r * (1 - (C / k3)) * C) - ((b3 * S * C) / a + C)
     return [dSdt, dIdt, dYdt, dCdt]
 
+
 def ode_solver(t: int, initial_conditions: list, params=None):
     initS, initI, initY, initC = initial_conditions
     #m, b1, b2, b3, a, a2, K, c, c1, c2, k1, k2, k3, r, beta = params
@@ -41,8 +45,6 @@ def ode_solver(t: int, initial_conditions: list, params=None):
                           k3, r, beta))
     return result
 
-#def main(initS, initI, initY, initC, m, b1, b2, b3, a, a2, K, c, 
-#         c1, c2, k1, k2, k3, r, beta, days):
 
 # Constants
 m = 0.25
@@ -80,7 +82,6 @@ else:
 
 simData = {'S': S, 'I': I, 'Y': Y, 'C': C}
 df = pd.DataFrame(simData)
-
 
 app = dash.Dash()
 server = app.server
@@ -128,7 +129,3 @@ app.layout = html.Div(
 
 if __name__ == '__main__':
     app.run_server(debug=True)
-
-#app.run_server(debug=True,
-#                port=8000,
-#                host='127.0.0.1')
