@@ -8,6 +8,10 @@
 ### Markdown
 - [ ] Add installation instructions for Ubuntu
 - [ ] Add installation instructions for Windows
+- [ ] Add input table
+- [ ] Add simulation results table
+- [ ] Add plotly results (interactive)
+- [ ] Add simulation video
 
 ### Dashboard
 - [ ] Fix deployment to heroku
