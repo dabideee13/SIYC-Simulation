@@ -2,7 +2,7 @@
 
 ## Installation
 
-Make sure you have Python 3.7.7 and virtualenv (https://pypi.org/project/virtualenv/) installed.
+Make sure you have Python 3.7.7 and [virtualenv] (https://pypi.org/project/virtualenv/) installed.
 ```
 $ mkdir new_project
 $ cd new_project
