@@ -1,12 +1,11 @@
 # SIYC-Simulation
 
 ## Table of Contents
-**[Installation](##Installation)**<br>
-***[MacOS](###MacOS)***<br>
-***[Ubuntu](###Ubuntu)***<br>
-***[Windows](###Windows)***<br>
-**[Usage](##Usage)**<br>
-
+- [Installation](#Installation)
+  * [MacOS](#MacOS)
+  * [Ubuntu](#Ubuntu)
+  * [Windows](#Windows)
+- [Usage](#Usage)
 
 ## Installation ([MacOS](###MacOS), [Ubuntu](###Ubuntu) and [Windows](###Windows))
 ### MacOS 
