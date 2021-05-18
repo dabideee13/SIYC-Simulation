@@ -32,12 +32,12 @@ $ cd new_project/SIYC-Simulation
 $ source venv/bin/activate
 ```
 
-Using pre-defined default values.
+If using default parameter values, simply run simulation.py.
 ```
 $ python simulation.py
 ```
 
-Input or change parameter values in the first row of input.csv then run simulation.py.
+If not using default parameter values, input or change parameter values in the first row of input.csv then run simulation.py.
 ```
 $ python simulation.py
 ```
