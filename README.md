@@ -3,35 +3,31 @@
 ## Installation
 
 Make sure you have Python 3.7.7 and [virtualenv](https://pypi.org/project/virtualenv/) installed.
+
+Create a new directory for this project.
 ```
 $ mkdir new_project
 $ cd new_project
 ```
 
+Create an isolated environment for this project to avoid package conflicts during installation.
 ```
 $ virtualenv venv
 $ source venv/bin/activate
 ```
 
+Clone this repository locally.
 ```
 $ git clone https://github.com/dabideee13/SIYC-Simulation.git 
 ```
 
+Install the necessary packages for this project.
 ```
 $ cd SIYC-Simulation
 $ pip install -r requirements.txt
 ```
 
-```
-$ deactivate
-```
-
 ## Usage
-```
-$ cd new_project
-$ source venv/bin/activate
-$ cd SIYC-Simulation
-```
 
 If using default parameter values, simply run simulation.py.
 ```
