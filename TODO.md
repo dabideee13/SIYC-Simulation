@@ -4,6 +4,7 @@
 - [ ] Add feature for multiple runs  
 - [ ] Add feature for running with different parameters based on input.csv
 - [ ] Add log files
+- [ ] Add docstrings
 
 ### Markdown
 - [ ] Add installation instructions for Ubuntu
