@@ -7,7 +7,7 @@
   * [Windows](#Windows)
 - [Usage](#Usage)
 
-## Installation ([MacOS](###MacOS), [Ubuntu](###Ubuntu) and [Windows](###Windows))
+## Installation ([MacOS](#MacOS), [Ubuntu](#Ubuntu) and [Windows](#Windows))
 ### MacOS 
 
 Make sure you have Python 3.7.7 and [virtualenv](https://pypi.org/project/virtualenv/) installed.
