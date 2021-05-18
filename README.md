@@ -9,7 +9,7 @@ $ cd new_project
 ```
 
 ```
-$ virtualenv venv -p python=3.7.7
+$ virtualenv venv
 $ source venv/bin/activate
 ```
 
