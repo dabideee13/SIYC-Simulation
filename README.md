@@ -28,6 +28,9 @@ $ cd SIYC-Simulation
 $ pip install -r requirements.txt
 ```
 
+### Ubuntu
+### Windows
+
 ## Usage
 
 If using default parameter values, simply run simulation.py.
