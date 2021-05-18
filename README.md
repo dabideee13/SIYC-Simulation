@@ -2,6 +2,9 @@
 
 ## Table of Contents
 **[Installation](##Installation)**<br>
+***[MacOS](###MacOS)***<br>
+***[Ubuntu](###Ubuntu)***<br>
+***[Windows](###Windows)***<br>
 **[Usage](##Usage)**<br>
 
 
