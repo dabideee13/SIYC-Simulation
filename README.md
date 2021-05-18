@@ -6,6 +6,7 @@
   * [Ubuntu](#Ubuntu)
   * [Windows](#Windows)
 - [Usage](#Usage)
+- [License](#License)
 
 ## Installation ([MacOS](#MacOS), [Ubuntu](#Ubuntu) and [Windows](#Windows))
 ### MacOS 
@@ -49,3 +50,5 @@ If not using default parameter values, input or change parameter values in the f
 ```
 $ python simulation.py
 ```
+
+## License
