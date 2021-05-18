@@ -1,6 +1,6 @@
 # SIYC-Simulation
 
-## Installation
+## Installation (MacOS, Linux and Windows)
 ### MacOS
 
 Make sure you have Python 3.7.7 and [virtualenv](https://pypi.org/project/virtualenv/) installed.
