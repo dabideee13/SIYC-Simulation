@@ -42,10 +42,7 @@ def ode_solver(model: Callable, t: int, initial_conditions: list, params):
     return result
 
 
-const = params.main()
-
-
-def main():
+def main(const: dict):
 
     initial_conditions = [
         const['S'],
@@ -105,4 +102,10 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+
+    # Import parameter values inputed by the user
+    param_values = params.main()
+
+    # Run simulation
+    main(param_values)
+
