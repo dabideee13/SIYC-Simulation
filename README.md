@@ -28,8 +28,9 @@ $ deactivate
 
 ## Usage
 ```
-$ cd new_project/SIYC-Simulation
+$ cd new_project
 $ source venv/bin/activate
+$ cd SIYC-Simulation
 ```
 
 If using default parameter values, simply run simulation.py.
