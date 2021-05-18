@@ -53,4 +53,4 @@ $ python simulation.py
 
 ## License
 ### Code
-MIT License: https://dabideee13.mit-license.org/ or see the [LICENSE](LICENSE.md) file.
+MIT License: https://dabideee13.mit-license.org/ or see the [LICENSE](LICENSE) file.
