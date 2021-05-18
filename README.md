@@ -1,8 +1,8 @@
 # SIYC-Simulation
 
 ## Table of Contents
-**[Installation Instructions](##Installation)**<br>
-**[Usage Instructions](##Usage)**<br>
+**[Installation](##Installation)**<br>
+**[Usage](##Usage)**<br>
 
 
 ## Installation ([MacOS](###MacOS), [Ubuntu](###Ubuntu) and [Windows](###Windows))
