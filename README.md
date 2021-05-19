@@ -41,7 +41,9 @@ $ pip install -r requirements.txt
 
 ## Usage
 
-If using default parameter values, simply run simulation.py.
+In terminal...
+
+If using default parameter values, run simulation.py.
 ```
 $ python simulation.py
 ```
@@ -49,6 +51,11 @@ $ python simulation.py
 If not using default parameter values, input or change parameter values in the first row of input.csv then run simulation.py.
 ```
 $ python simulation.py
+```
+
+To view current parameter settings (values), run params.py.
+```
+$ python params.py
 ```
 
 ## License
