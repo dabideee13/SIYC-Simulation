@@ -65,9 +65,11 @@ $ python simulation.py
 ```
 - Outputs:
   * [plot.png](plot.png)
+
 ![Simulation results for 30 days](plot.png)
 
   * Head of [simulation-data.csv](simulation-data.csv) (for default values)
+
 |     | S                    | I                 | Y                  | C                  |
 | :-: | :------------------: | :---------------: | :----------------: | :----------------: |
 | 0   | 1.0                  | 1.0               | 2.0                | 95.0               |
