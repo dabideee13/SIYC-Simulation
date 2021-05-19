@@ -1,20 +1,10 @@
 import csv
+import json
 
 from utils import get_values, map_to_none
 
 
-def main():
-
-    # Import csv data inputed by the user
-    with open('input.csv', newline='') as f:
-        f = csv.reader(f)
-        for i, line in enumerate(f):
-            if i == 0:
-                vars = line
-            elif i == 1:
-                vals = line
-            else:
-                break
+def wrangle_inputs(vars: list, vals: list):
 
     # Set values not defined by user to be None
     inputs = map_to_none(
@@ -31,9 +21,36 @@ def main():
         )
     )
 
-    # Returns the whole parameter data
-    return get_values(**inputs)
+    return inputs
+
+
+def main():
+
+    # Import csv data inputed by the user
+    with open('input.csv', newline='') as f:
+        f = csv.reader(f)
+        for i, line in enumerate(f):
+            if i == 0:
+                vars = line
+            elif i == 1:
+                vals = line
+            else:
+                break
+
+    # Clean input data and set the right format
+    inputs = wrangle_inputs(vars, vals)
+
+    # Parameter values for the model
+    param_values = get_values(**inputs)
+
+    # Export current parameter values to .txt file
+    with open('param_values.txt', 'w') as file:
+        file.write(json.dumps(param_values))
+
+    return param_values
 
 
 if __name__ == '__main__':
+
+    # Show parameter values in console or terminal
     print(main())
