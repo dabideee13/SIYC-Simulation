@@ -53,10 +53,13 @@ If not using default parameter values, input or change parameter values in the f
 $ python simulation.py
 ```
 
-To view current parameter settings (values), run params.py or open param_values.txt.
+To view current parameter settings (values), run [params.py](params.py) or open [param_values.txt](param_values.txt).
 ```
 $ python params.py
 ```
+
+## Example
+
 
 ## License
 ### Code
