@@ -6,6 +6,7 @@
   * [Ubuntu](#Ubuntu)
   * [Windows](#Windows)
 - [Usage](#Usage)
+- [Example](#Example)
 - [License](#License)
 
 ## Installation ([MacOS](#MacOS), [Ubuntu](#Ubuntu) and [Windows](#Windows))
@@ -59,6 +60,10 @@ $ python params.py
 ```
 
 ## Example
+```
+$ python simulation.py
+```
+![Simulation results for 30 days](plot.png)
 
 
 ## License
