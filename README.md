@@ -41,7 +41,7 @@ $ pip install -r requirements.txt
 
 ## Usage
 
-In terminal...
+In terminal:
 
 If using default parameter values, run simulation.py.
 ```
