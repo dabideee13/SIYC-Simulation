@@ -5,6 +5,7 @@
 - [ ] Add feature for running with different parameters based on input.csv
 - [ ] Add log files
 - [ ] Add docstrings
+- [ ] Add export to .png for simulation results
 
 ### Markdown
 - [ ] Add installation instructions for Ubuntu
