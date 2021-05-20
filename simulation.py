@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 SIYC Simulation
 """
@@ -7,14 +8,14 @@ from typing import Callable
 import pandas as pd
 import numpy as np
 from scipy.integrate import odeint
-import plotly.graph_objects as go
 
 import params
+from utils import plot_results
 
 
-def ode_model(z: list, t, m, b1, b2, b3, a, a2, K, c, c1, c2, k1,
-              k2, k3, r, beta):
+def ode_model(z: list, t, *args):
 
+    m, b1, b2, b3, a, a2, K, c, c1, c2, k1, k2, k3, r, beta = args
     S, I, Y, C = z
 
     fst = (b1 * S * C * m) / (a + C)
@@ -35,11 +36,17 @@ def ode_solver(model: Callable, t: int, initial_conditions: list, params):
     (m, b1, b2, b3, a, a2, K, c, c1, c2, k1, k2, k3, r, beta) = params
     initS, initI, initY, initC = initial_conditions
 
-    result = odeint(model, [initS, initI, initY, initC], t,
-                    args=(m, b1, b2, b3, a, a2, K, c, c1, c2, k1, k2,
-                          k3, r, beta))
-
-    return result
+    return (
+        odeint(
+            model,
+            [initS, initI, initY, initC],
+            t,
+            args=(
+                m, b1, b2, b3, a, a2, K, c,
+                c1, c2, k1, k2, k3, r, beta
+            )
+        )
+    )
 
 
 def main(const: dict):
@@ -58,47 +65,13 @@ def main(const: dict):
     S, I, Y, C = sol[:, 0], sol[:, 1], sol[:, 2], sol[:, 3]
 
     # Convert to simulation results to dataframe
-    simData = {'S': S, 'I': I, 'Y': Y, 'C': C}
-    df = pd.DataFrame(simData)
+    sim_data = {'S': S, 'I': I, 'Y': Y, 'C': C}
+    df = pd.DataFrame(sim_data)
 
     # Export simulation data to csv
     df.to_csv('simulation-data.csv')
 
-    # Plot results
-    fig = go.Figure()
-    fig.add_trace(
-        go.Scatter(
-            x=df.index,
-            y=df.S,
-            mode='lines',
-            name='S'
-        )
-    )
-    fig.add_trace(
-        go.Scatter(
-            x=df.index,
-            y=df.I,
-            mode='lines',
-            name='I'
-        )
-    )
-    fig.add_trace(
-        go.Scatter(
-            x=df.index,
-            y=df.Y,
-            mode='lines',
-            name='Y'
-        )
-    )
-    fig.add_trace(
-        go.Scatter(
-            x=df.index,
-            y=df.C,
-            mode='lines',
-            name='C'
-        )
-    )
-    fig.show()
+    plot_results(df)
 
 
 if __name__ == '__main__':
@@ -108,4 +81,3 @@ if __name__ == '__main__':
 
     # Run simulation
     main(param_values)
-

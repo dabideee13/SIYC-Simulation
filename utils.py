@@ -5,6 +5,9 @@ Utility functions for SIYC Simulation
 
 from typing import Dict, Union
 
+import pandas as pd
+import plotly.graph_objects as go
+
 
 def get_values(**constants) -> Dict[str, Union[float, int]]:
 
@@ -44,3 +47,18 @@ def map_to_none(inputs: dict) -> dict:
         if val == '':
             inputs[key] = None
     return inputs
+
+
+def plot_results(data: pd.DataFrame):
+
+    fig = go.Figure()
+    for col in data:
+        fig.add_trace(
+            go.Scatter(
+                x=data.index,
+                y=data.loc[:, col],
+                mode='lines',
+                name=col
+            )
+        )
+    return fig.show()
