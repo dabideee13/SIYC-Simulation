@@ -43,10 +43,7 @@ def get_values(**constants) -> Dict[str, Union[float, int]]:
 
 
 def map_to_none(inputs: dict) -> dict:
-    for key, val in inputs.items():
-        if val == '':
-            inputs[key] = None
-    return inputs
+    return {key: None for key, val in inputs.items() if val == ''}
 
 
 def plot_results(data: pd.DataFrame):
